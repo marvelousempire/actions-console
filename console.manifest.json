@@ -1,0 +1,89 @@
+{
+  "console": {
+    "id": "actions-console",
+    "name": "Actions Console",
+    "shortName": "Actions",
+    "version": "1.0.0",
+    "icon": "🎬",
+    "tagline": "Slice Flow Automation Center",
+    "description": "Execute and manage Slice Flows - automated action sequences for infrastructure, AI deployment, and system operations.",
+    "category": "automation",
+    "framework": "sunday-app",
+    "created": "2025-12-23T00:00:00Z",
+    "updated": "2025-12-23T00:00:00Z"
+  },
+  "runtime": {
+    "consoleId": "actions-console",
+    "mountPath": "/actions-console",
+    "cartridgePath": "/cartridges/actions",
+    "hosts": [
+      "actions.thebriefcase.app"
+    ]
+  },
+  "modes": {
+    "standalone": true,
+    "embedded": true
+  },
+  "features": [
+    "slice-flow-execution",
+    "action-library-browser",
+    "real-time-logs",
+    "flow-editor",
+    "execution-history"
+  ],
+  "dependencies": {
+    "runtime": ["quick-server"],
+    "optional": ["ollama", "docker"]
+  },
+  "slices": {
+    "libraryPath": "/slices/library",
+    "flowsPath": "/slices/flows",
+    "categories": [
+      {
+        "id": "ai",
+        "name": "AI & LLM",
+        "icon": "🤖",
+        "description": "Ollama, Open WebUI, and AI model management"
+      },
+      {
+        "id": "docker",
+        "name": "Docker",
+        "icon": "🐳",
+        "description": "Container management and orchestration"
+      },
+      {
+        "id": "gitlab",
+        "name": "GitLab",
+        "icon": "🦊",
+        "description": "GitLab CE installation and CI/CD"
+      },
+      {
+        "id": "system",
+        "name": "System",
+        "icon": "🖥️",
+        "description": "System-level operations and maintenance"
+      },
+      {
+        "id": "git",
+        "name": "Git",
+        "icon": "📦",
+        "description": "Git operations and repository management"
+      },
+      {
+        "id": "node",
+        "name": "Node.js",
+        "icon": "🟢",
+        "description": "Node.js and package management"
+      }
+    ]
+  },
+  "registry": {
+    "cnId": "actions-console",
+    "type": "console-cartridge",
+    "repository": {
+      "url": "https://github.com/marvelousempire/actions-console",
+      "branch": "main"
+    }
+  }
+}
+

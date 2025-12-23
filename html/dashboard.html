@@ -1,0 +1,192 @@
+<div class="sunday-page">
+  <!-- Header -->
+  <div class="sunday-card" style="margin-bottom: 24px;">
+    <div class="sunday-card__body" style="display: flex; align-items: center; justify-content: space-between;">
+      <div>
+        <h1 style="margin: 0; font-size: 24px; font-weight: 600;">🎬 Actions Console</h1>
+        <p style="margin: 8px 0 0; color: var(--muted);">Slice Flow Automation Center</p>
+      </div>
+      <div style="display: flex; gap: 12px;">
+        <button onclick="runFlow('setup-open-webui')" class="sunday-btn sunday-btn--primary">
+          🚀 Deploy Open WebUI
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status Cards -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px;">
+    <div class="sunday-card">
+      <div class="sunday-card__body" style="text-align: center; padding: 20px;">
+        <div id="ollama-status-icon" style="font-size: 32px; margin-bottom: 8px;">🔍</div>
+        <div style="font-weight: 600;">Ollama</div>
+        <div id="ollama-status" style="font-size: 12px; color: var(--muted);">Checking...</div>
+      </div>
+    </div>
+    <div class="sunday-card">
+      <div class="sunday-card__body" style="text-align: center; padding: 20px;">
+        <div id="openwebui-status-icon" style="font-size: 32px; margin-bottom: 8px;">🔍</div>
+        <div style="font-weight: 600;">Open WebUI</div>
+        <div id="openwebui-status" style="font-size: 12px; color: var(--muted);">Checking...</div>
+      </div>
+    </div>
+    <div class="sunday-card">
+      <div class="sunday-card__body" style="text-align: center; padding: 20px;">
+        <div style="font-size: 32px; margin-bottom: 8px;">📚</div>
+        <div style="font-weight: 600;">Library</div>
+        <div style="font-size: 12px; color: var(--muted);">8 Slices Available</div>
+      </div>
+    </div>
+    <div class="sunday-card">
+      <div class="sunday-card__body" style="text-align: center; padding: 20px;">
+        <div style="font-size: 32px; margin-bottom: 8px;">⏩</div>
+        <div style="font-weight: 600;">Flows</div>
+        <div style="font-size: 12px; color: var(--muted);">7 Flows Ready</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="sunday-card" style="margin-bottom: 24px;">
+    <div class="sunday-card__header">
+      <div class="sunday-text sunday-text--title">⚡ Quick Actions</div>
+    </div>
+    <div class="sunday-card__body">
+      <div class="quick-action-grid">
+        <button onclick="runSlice('open-webui-detect')" class="quick-action-btn">
+          <span class="quick-action-btn__icon">🔍</span>
+          Check Open WebUI
+        </button>
+        <button onclick="runSlice('ollama-detect')" class="quick-action-btn">
+          <span class="quick-action-btn__icon">🔍</span>
+          Check Ollama
+        </button>
+        <button onclick="runSlice('open-webui-start')" class="quick-action-btn">
+          <span class="quick-action-btn__icon">▶️</span>
+          Start Open WebUI
+        </button>
+        <button onclick="runSlice('open-webui-stop')" class="quick-action-btn">
+          <span class="quick-action-btn__icon">⏹️</span>
+          Stop Open WebUI
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Flows -->
+  <div class="sunday-card">
+    <div class="sunday-card__header">
+      <div class="sunday-text sunday-text--title">🌟 Featured Flows</div>
+    </div>
+    <div class="sunday-card__body">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+        <div class="flow-card">
+          <div class="flow-card__header">
+            <span class="flow-card__icon">🤖</span>
+            <span class="flow-card__title">Setup Open WebUI</span>
+          </div>
+          <div class="flow-card__desc">
+            Deploy Open WebUI with Ollama for a complete local AI chat experience. Includes model pulling and health checks.
+          </div>
+          <div class="flow-card__actions">
+            <span class="category-badge category-badge--ai">🤖 AI</span>
+            <button onclick="runFlow('setup-open-webui')" class="sunday-btn sunday-btn--sm sunday-btn--primary" style="margin-left: auto;">
+              Run Flow →
+            </button>
+          </div>
+        </div>
+        
+        <div class="flow-card">
+          <div class="flow-card__header">
+            <span class="flow-card__icon">🦊</span>
+            <span class="flow-card__title">Setup GitLab</span>
+          </div>
+          <div class="flow-card__desc">
+            Deploy self-hosted GitLab CE with Docker. Includes runner setup and CI/CD configuration.
+          </div>
+          <div class="flow-card__actions">
+            <span class="category-badge category-badge--gitlab">🦊 GitLab</span>
+            <button onclick="runFlow('setup-gitlab-complete')" class="sunday-btn sunday-btn--sm sunday-btn--secondary" style="margin-left: auto;">
+              Run Flow →
+            </button>
+          </div>
+        </div>
+        
+        <div class="flow-card">
+          <div class="flow-card__header">
+            <span class="flow-card__icon">🦙</span>
+            <span class="flow-card__title">Install Ollama</span>
+          </div>
+          <div class="flow-card__desc">
+            Install and configure Ollama LLM runtime. Pulls default models and verifies installation.
+          </div>
+          <div class="flow-card__actions">
+            <span class="category-badge category-badge--ai">🤖 AI</span>
+            <button onclick="runFlow('install-ollama')" class="sunday-btn sunday-btn--sm sunday-btn--secondary" style="margin-left: auto;">
+              Run Flow →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Check service status
+  async function checkStatus() {
+    // Check Ollama
+    try {
+      const ollamaRes = await fetch('/api/ai/status');
+      const ollamaData = await ollamaRes.json();
+      const ollamaIcon = document.getElementById('ollama-status-icon');
+      const ollamaStatus = document.getElementById('ollama-status');
+      if (ollamaData.ollama?.available) {
+        ollamaIcon.textContent = '✅';
+        ollamaStatus.textContent = `Running (${ollamaData.ollama.models?.length || 0} models)`;
+      } else {
+        ollamaIcon.textContent = '❌';
+        ollamaStatus.textContent = 'Offline';
+      }
+    } catch (e) {
+      document.getElementById('ollama-status-icon').textContent = '❓';
+      document.getElementById('ollama-status').textContent = 'Unknown';
+    }
+    
+    // Check Open WebUI
+    try {
+      const port = 3000;
+      const host = window.location.hostname;
+      const res = await fetch(`http://${host}:${port}/api/version`, { 
+        signal: AbortSignal.timeout(3000) 
+      });
+      const data = await res.json();
+      const icon = document.getElementById('openwebui-status-icon');
+      const status = document.getElementById('openwebui-status');
+      icon.textContent = '✅';
+      status.textContent = `v${data.version}`;
+    } catch (e) {
+      document.getElementById('openwebui-status-icon').textContent = '❌';
+      document.getElementById('openwebui-status').textContent = 'Offline';
+    }
+  }
+  
+  // Run a slice
+  window.runSlice = async function(sliceId) {
+    console.log('[Actions] Running slice:', sliceId);
+    alert(`Running slice: ${sliceId}\n\n(Slice runner API integration coming soon)`);
+  };
+  
+  // Run a flow
+  window.runFlow = async function(flowId) {
+    console.log('[Actions] Running flow:', flowId);
+    alert(`Running flow: ${flowId}\n\n(Slice runner API integration coming soon)`);
+  };
+  
+  // Check status on load
+  checkStatus();
+  setInterval(checkStatus, 30000);
+})();
+</script>
+

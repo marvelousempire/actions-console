@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actions Console | Slice Flow Automation</title>
+  <meta name="description" content="Execute and manage Slice Flows - automated action sequences for infrastructure, AI deployment, and system operations.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+  
+  <!-- Sunday Framework CSS -->
+  <link rel="stylesheet" href="/sundayapp/css/sunday.css">
+  <link rel="stylesheet" href="./css/actions-console.css?v=20251223a">
+  
+  <style>
+    /* Critical inline styles for fast paint */
+    :root {
+      --accent: #8b5cf6;
+      --accent-hover: #7c3aed;
+    }
+    
+    .boot-screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0f0f0f;
+      color: #fff;
+      gap: 20px;
+      z-index: 9999;
+    }
+    
+    .boot-screen__icon {
+      font-size: 64px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    .boot-screen__text {
+      font-size: 14px;
+      color: #888;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Boot Screen -->
+  <div id="boot-screen" class="boot-screen">
+    <div class="boot-screen__icon">🎬</div>
+    <div class="boot-screen__text" id="boot-status">Loading Actions Console…</div>
+  </div>
+
+  <!-- App Shell -->
+  <div id="app-root" style="display: none;">
+    <!-- Header will be injected by Sunday -->
+    <header id="sunday-header"></header>
+    
+    <!-- Main Content -->
+    <main id="sunday-content" class="sunday-content"></main>
+    
+    <!-- Footer -->
+    <footer id="sunday-footer"></footer>
+  </div>
+
+  <!-- Sunday Framework -->
+  <script type="module" src="./js/actions-boot.js?v=20251223a"></script>
+</body>
+</html>
+
