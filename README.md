@@ -106,6 +106,31 @@ actions-console/
 
 ---
 
+## 🛂 Passport System
+
+Actions Console uses the **Passport System** for universal identity and loading:
+
+**Passport File:** `passport-actions-console.json`
+
+```json
+{
+  "udin": "CONSOLE-ACTIONS-20251223120000",
+  "name": "Actions Console",
+  "type": "console",
+  "framework": "sundayapp",
+  "source": "./"
+}
+```
+
+This enables Actions Console to be:
+- Run as a **standalone Console** at `/actions-console`
+- Loaded as a **Cartridge** in other consoles
+- **Discovered** automatically by the PassportReader
+
+See [ContributionNetwork/docs/PASSPORT-SYSTEM.md](https://github.com/marvelousempire/ContributionNetwork/docs/PASSPORT-SYSTEM.md) for full documentation.
+
+---
+
 ## 📜 CN Registry
 
 This console is registered in the [Contribution Network Registry](https://github.com/marvelousempire/ContributionNetwork):
