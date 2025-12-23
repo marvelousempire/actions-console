@@ -4,151 +4,125 @@
 **Created:** Tuesday Dec 23, 2025  
 **Last Updated:** Tuesday Dec 23, 2025
 
-Slice Flow Automation Center for Quick Server — execute and manage automated action sequences for infrastructure, AI deployment, and system operations.
+---
+
+## What Is This?
+
+**Actions Console** helps you run automated tasks with one click.
+
+Instead of typing long commands, you can just press a button and watch the magic happen. Want to install AI on your computer? One click. Want to set up a new website? One click. Actions Console makes hard things easy.
+
+We call these automated tasks "**Slice Flows**" — think of them like recipes. Each Slice Flow has a list of steps that run in order.
 
 ---
 
-## ✨ Overview
+## What Can It Do?
 
-Actions Console is a **Console-Cartridge Contribution** that provides a visual interface for running [Slice Flows](https://github.com/marvelousempire/quick-server/tree/main/slices) — YAML-based automation scripts, like Photoshop Actions for your server.
-
-### Key Features
-
-- 🚀 **One-Click Deployments** — Deploy Open WebUI, GitLab, Ollama with a single click
-- 📚 **Slice Library Browser** — Browse all available slices by category
-- ⏩ **Flow Execution** — Run complete flows or individual slices
-- 📊 **Real-Time Logs** — Watch execution progress live
-- 🔍 **Status Monitoring** — Check service health at a glance
+| Tab | What It Does |
+|-----|--------------|
+| 🏠 **Dashboard** | See your most-used actions and quick buttons |
+| ⏩ **Flows** | Browse and run complete automation workflows |
+| 📚 **Library** | See all available Slices organized by category |
+| 📜 **Logs** | Watch what's happening as tasks run |
+| ⚙️ **Settings** | Change how the console works |
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Popular Actions
 
-### As Standalone Console
+These are some of the things you can do with one click:
 
-```bash
-# Clone the repo
-git clone https://github.com/marvelousempire/actions-console.git
+| Action | What It Does |
+|--------|--------------|
+| 🤖 **Deploy Open WebUI** | Install local AI chat on your computer |
+| 🦙 **Install Ollama** | Set up the AI engine that powers Open WebUI |
+| 🦊 **Deploy GitLab** | Install your own private GitHub-like server |
+| 📦 **Pull AI Models** | Download AI brains like Llama 3.2 |
 
-# Serve with Quick Server or any static server
-# Access at: http://localhost:8001/actions-console
+---
+
+## How to Use It
+
+### Open Actions Console
+
+Go to:
+```
+http://localhost:8001/actions-console
 ```
 
-### As Embedded Cartridge
+### Run an Action
 
-Actions Console can be embedded in any Sunday Framework console via the cartridge system.
-
----
-
-## 📦 Featured Flows
-
-| Flow | Description | Category |
-|------|-------------|----------|
-| `setup-open-webui` | Deploy Open WebUI + Ollama for local AI chat | 🤖 AI |
-| `setup-gitlab-complete` | Self-hosted GitLab CE with Docker | 🦊 GitLab |
-| `install-ollama` | Install and configure Ollama LLM runtime | 🤖 AI |
-| `migrate-github-to-gitlab` | Migrate repos from GitHub to GitLab | 🦊 GitLab |
+1. Click on a Flow (like "Deploy Open WebUI")
+2. Press the **▶ Run** button
+3. Watch the logs as it works
+4. Done! 🎉
 
 ---
 
-## 🤖 AI Slice Library
-
-Complete automation for local AI infrastructure:
-
-| Slice | Description |
-|-------|-------------|
-| `open-webui-install` | Deploy Open WebUI Docker container |
-| `open-webui-detect` | Check if Open WebUI is running |
-| `open-webui-start` | Start existing container |
-| `open-webui-stop` | Stop container |
-| `ollama-detect` | Check Ollama installation |
-| `ollama-start` | Start Ollama service |
-| `ollama-pull-model` | Pull LLM models |
-
-### Deploy Open WebUI (One Command)
-
-```bash
-cd /path/to/quick-server
-node slices/slice-runner.js run slices/flows/setup-open-webui.yaml
-```
-
-This will:
-1. Detect/start Ollama
-2. Pull default model (llama3.2)
-3. Deploy Open WebUI Docker container
-4. Verify the stack is running
-
----
-
-## 🏗️ Architecture
+## How It Works (Simple Version)
 
 ```
-actions-console/
-├── console.manifest.json   # Console configuration
-├── app.config.js           # Sunday Framework config
-├── index.html              # Entry point
-├── js/
-│   └── actions-boot.js     # Bootstrap script
-├── css/
-│   └── actions-console.css # Custom styles
-└── html/
-    └── dashboard.html      # Main dashboard
+You click "Deploy Open WebUI"
+    ↓
+Actions Console reads the recipe (Slice Flow)
+    ↓
+It runs each step in order:
+    1. Check if Ollama is installed
+    2. Start Ollama if needed
+    3. Download the AI model
+    4. Start Open WebUI in Docker
+    5. Check that everything works
+    ↓
+You see "Success!" 🎉
 ```
 
 ---
 
-## 🔗 Related Projects
+## 🛂 Passport (Identity Card)
 
-- [Quick Server](https://github.com/marvelousempire/quick-server) — Main platform hosting the Slice system
-- [Sunday App Framework](https://github.com/marvelousempire/SundayApp) — The framework this console is built on
-- [Open WebUI](https://github.com/open-webui/open-webui) — AI interface deployed by our slices
-- [CN Console](https://github.com/marvelousempire/cn-console) — Contribution Network management
+Actions Console has a "passport" file that tells the system who it is:
 
----
-
-## 🛂 Passport System
-
-Actions Console uses the **Passport System** for universal identity and loading:
-
-**Passport File:** `passport-actions-console.json`
+**Passport:** `passport-actions-console.json`
 
 ```json
 {
   "udin": "CONSOLE-ACTIONS-20251223120000",
   "name": "Actions Console",
-  "type": "console",
-  "framework": "sundayapp",
-  "source": "./"
+  "type": "console"
 }
 ```
 
-This enables Actions Console to be:
-- Run as a **standalone Console** at `/actions-console`
-- Loaded as a **Cartridge** in other consoles
-- **Discovered** automatically by the PassportReader
-
-See [ContributionNetwork/docs/PASSPORT-SYSTEM.md](https://github.com/marvelousempire/ContributionNetwork/docs/PASSPORT-SYSTEM.md) for full documentation.
+This lets Actions Console:
+- Run on its own at `/actions-console`
+- Load inside other apps as a part (called a "cartridge")
+- Be found automatically by the system
 
 ---
 
-## 📜 CN Registry
+## Folder Layout
 
-This console is registered in the [Contribution Network Registry](https://github.com/marvelousempire/ContributionNetwork):
-
-```json
-{
-  "id": "actions-console",
-  "type": "console-cartridge",
-  "emoji": "🎬",
-  "tagline": "Slice Flow Automation Center"
-}
+```
+actions-console/
+├── index.html              ← The main page
+├── app.config.js           ← App settings
+├── passport-actions-console.json ← Identity file
+├── README.md               ← This file (you're reading it!)
+├── css/                    ← How it looks
+├── js/                     ← How it works
+└── html/                   ← All the pages inside
 ```
 
 ---
 
-## License
+## Related Apps
 
-Part of The Briefcase ecosystem.
+- [Quick Server](https://github.com/marvelousempire/quick-server) — Has all the Slice Flows
+- [SundayApp Framework](https://github.com/marvelousempire/SundayApp) — The framework it's built on
+- [Open WebUI](https://github.com/open-webui/open-webui) — An AI app you can deploy with Slices
+- [CN Console](https://github.com/marvelousempire/cn-console) — The main control center
+
+---
 
 **In Good Faith With Clean Hands**
 
+*Actions Console v1.0.0*
