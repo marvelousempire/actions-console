@@ -6,11 +6,17 @@
 
 ---
 
+## Trustee Quick Start (Plain English)
+
+- **Open it**: Start **Quick Server**, then open **`/actions-console`** on the same address (the port is shown as **`Main:`** in the terminal).
+- **What this is**: A safe “one-click actions” dashboard that runs **Slice Flows** (automation recipes).
+- **If you are not sure**: Start with one known action (example: “Deploy Open WebUI”) and watch the log. If it fails, copy the log for the operator.
+
 ## What Is This?
 
 **Actions Console** helps you run automated tasks with one click.
 
-Instead of typing long commands, you can just press a button and watch the magic happen. Want to install AI on your computer? One click. Want to set up a new website? One click. Actions Console makes hard things easy.
+Instead of typing long commands, you can press a button and watch the steps run in order. Want to install AI on your computer? One click. Want to set up a new website? One click. Actions Console makes hard things easier.
 
 We call these automated tasks "**Slice Flows**" — think of them like recipes. Each Slice Flow has a list of steps that run in order.
 
@@ -119,7 +125,7 @@ actions-console/
 - [Quick Server](https://github.com/marvelousempire/quick-server) — Has all the Slice Flows
 - [SundayApp Framework](https://github.com/marvelousempire/SundayApp) — The framework it's built on
 - [Open WebUI](https://github.com/open-webui/open-webui) — An AI app you can deploy with Slices
-- [CN Console](https://github.com/marvelousempire/cn-console) — The main control center
+- [Contribution Network](https://github.com/marvelousempire/ContributionNetwork) — CN Console + registry (main control center)
 
 ---
 
