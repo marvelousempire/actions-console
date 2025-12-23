@@ -1,5 +1,5 @@
 {
-  "$schema": "https://thebriefcase.app/schemas/passport.schema.json",
+  "$schema": "/sundayapp/schemas/passport.schema.json",
   
   "udin": "CONSOLE-ACTIONS-20251223120000",
   "name": "Actions Console",
