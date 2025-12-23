@@ -1,0 +1,35 @@
+{
+  "$schema": "https://thebriefcase.app/schemas/passport.schema.json",
+  
+  "udin": "CONSOLE-ACTIONS-20251223120000",
+  "name": "Actions Console",
+  "shortName": "actions-console",
+  "type": "console",
+  "version": "1.1.0",
+  
+  "framework": "sundayapp",
+  
+  "source": "./",
+  "entry": "index.html",
+  "config": "app.config.js",
+  
+  "capabilities": {
+    "standalone": true,
+    "cartridge": true,
+    "embeddable": true
+  },
+  
+  "slices": {
+    "libraryPath": "/slices/library",
+    "flowsPath": "/slices/flows"
+  },
+  
+  "metadata": {
+    "created": "2025-12-23T12:00:00Z",
+    "author": "Contribution Network",
+    "repository": "https://github.com/marvelousempire/actions-console",
+    "icon": "🎬",
+    "description": "Actions Console - Manage and run Slice automation flows"
+  }
+}
+

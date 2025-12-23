@@ -2,12 +2,12 @@
  * Actions Console - App Configuration
  * Slice Flow Automation Center
  * 
- * @version 1.0.0
+ * @version 1.1.0
  * @created 2025-12-23
  */
 export default {
   name: 'Actions Console',
-  version: '1.0.0',
+  version: '1.1.0',
   icon: '🎬',
   tagline: 'Slice Flow Automation Center',
   apiBase: '/api',
